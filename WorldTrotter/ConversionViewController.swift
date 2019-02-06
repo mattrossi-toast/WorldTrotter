@@ -6,6 +6,16 @@
 //  Copyright © 2019 Rossi, Matthew. All rights reserved.
 //
 
+/*
+ I worked on this by myself.
+ I finished all of the challenges, though I'm not sure how to prove to you that I removed all the constraints and redid them.
+ 
+ But the other 2 are done.
+ 
+ - Matt Rossi
+ 
+ */
+
 import UIKit
 
 class ConversionViewController: UIViewController, UITextFieldDelegate {
@@ -24,6 +34,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBOutlet var Background: UIView!
     let numberFormatter: NumberFormatter = {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
@@ -65,8 +76,10 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let existingTextHasDecimalSeperator = textField.text?.range(of: ".")
         let replacementTextHasDecimalSeparator = string.range(of: ".")
+        //If our string has letters in it..
         let hasLetters = string.rangeOfCharacter(from: NSCharacterSet.letters)
         
+        //return false!
         if existingTextHasDecimalSeperator != nil &&
             replacementTextHasDecimalSeparator != nil ||
             hasLetters != nil {
@@ -75,5 +88,12 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
             return true
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Change View background color each time it is viewed
+        let colorsArray: [UIColor] = [.blue, .green, .white, .black, .orange, .red]
+        let randomInt = Int.random(in: 0...5)
+        Background.backgroundColor = colorsArray[randomInt]
+        }
     
 }

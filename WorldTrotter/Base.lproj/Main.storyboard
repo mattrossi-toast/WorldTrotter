@@ -84,6 +84,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="ConvertIcon" id="NZf-tQ-Arb"/>
                     <connections>
+                        <outlet property="Background" destination="8bC-Xf-vdC" id="8Gg-sY-Rhb"/>
                         <outlet property="celsiusLabel" destination="0Ic-zY-JgK" id="S8I-GM-1zf"/>
                         <outlet property="textField" destination="PrF-y3-o1c" id="KXn-dg-lBy"/>
                     </connections>
@@ -117,6 +118,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uTy-xb-eUO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gNX-5M-ZI3">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -131,7 +133,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ConvertIcon" width="48" height="32"/>
+        <image name="ConvertIcon" width="48.5" height="32.5"/>
         <image name="MapIcon" width="49" height="33"/>
     </resources>
 </document>
